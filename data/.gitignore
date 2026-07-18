@@ -1,0 +1,4 @@
+# No data is committed; everything here except the acquisition script is local cache.
+*
+!.gitignore
+!get_data.py

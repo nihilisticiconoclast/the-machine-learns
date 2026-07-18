@@ -1,0 +1,3 @@
+# Pair every notebook with a py:percent script; the .py is the authoring format,
+# the executed .ipynb is committed alongside it so outputs render on GitHub.
+formats = "ipynb,py:percent"
