@@ -1,0 +1,23 @@
+[project]
+name = "the-machine-learns"
+version = "0.1.0"
+description = "A statistically rigorous machine-learning-with-Python curriculum, delivered as Jupyter notebooks"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "scipy>=1.14",
+    "scikit-learn>=1.5",
+    "statsmodels>=0.14",
+]
+
+[dependency-groups]
+dev = [
+    "jupytext>=1.16",
+    "jupyter>=1.1",
+    "ipykernel>=6.29",
+]
+
+[tool.uv]
+package = false
