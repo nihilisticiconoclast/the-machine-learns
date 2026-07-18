@@ -30,6 +30,18 @@ Notebooks are authored as jupytext `py:percent` scripts and committed as pairs â
 uv run jupytext --to ipynb --execute notebooks/00-python-for-r-users.py
 ```
 
+### Troubleshooting: kernel fails to start (`WinError 2` / "file not found")
+
+This means Jupyter tried to launch a Python executable it could not find â€” usually because Jupyter was started from outside the project environment and picked up a stale kernel registration, or because the venv's kernelspec uses a bare `python` command that is not on `PATH`. The fix is to register the project kernel with an absolute path, then launch Jupyter from inside the environment:
+
+```sh
+uv sync
+uv run python -m ipykernel install --sys-prefix --name python3
+uv run jupyter lab
+```
+
+If it persists, `uv run jupyter kernelspec list` shows which kernelspec directories are visible; open the offending `kernel.json` and check that the first `argv` entry is a Python executable that actually exists. In VS Code, instead select the interpreter at `.venv/Scripts/python.exe` (Windows) or `.venv/bin/python` (macOS/Linux) as the notebook kernel.
+
 ## Layout
 
 ```
