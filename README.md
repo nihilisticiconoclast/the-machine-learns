@@ -8,7 +8,7 @@ Thirteen modules in four blocks. [`SYLLABUS.md`](SYLLABUS.md) is the source of t
 
 | Block | Modules | Status |
 |---|---|---|
-| **A — Foundations** | 00 Python for the R-native statistician · 01 The statistical learning frame · 02 Linear models as estimators | 00 ✅ |
+| **A — Foundations** | 00 Python for the R-native statistician · 01 The statistical learning frame · 02 Linear models as estimators | 00–01 ✅ |
 | **B — Supervised learning and honest evaluation** | 03 Classification, probability, and calibration · 04 Evaluation protocols · 05 Trees and bagging · 06 Gradient boosting | — |
 | **C — The validator's toolkit** | 07 Interpretability and model validation · 08 Uncertainty quantification · 09 Unsupervised structure, with skepticism · 10 Temporal ML and drift | — |
 | **D — Depth and synthesis** | 11 Neural networks: foundations · 12 Capstone: champion–challenger with a validation pack | — |
@@ -55,4 +55,4 @@ If it persists, `uv run jupyter kernelspec list` shows which kernelspec director
 
 ## Data
 
-No data is committed. `data/get_data.py` documents acquisition (kagglehub for the Kaggle sources); notebooks load through `src/data.py` helpers. Module 00 is self-contained and needs no external data.
+No data is committed. `data/get_data.py` downloads and caches each dataset on first use (kagglehub for the Kaggle sources — public datasets download anonymously, no account needed); notebooks load through `src/data.py` helpers. Module 00 is self-contained; module 01 onwards uses the Lending Club accepted-loans book (~370 MB one-off download, cached locally as parquet thereafter).
